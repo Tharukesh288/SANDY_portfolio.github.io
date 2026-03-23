@@ -1,31 +1,4 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Custom Cursor
-    const cursor = document.getElementById('cursor');
-    const cursorFollower = document.getElementById('cursor-follower');
-    const links = document.querySelectorAll('a, .menu-toggle, .project-card');
-
-    document.addEventListener('mousemove', (e) => {
-        cursor.style.left = e.clientX + 'px';
-        cursor.style.top = e.clientY + 'px';
-        
-        // Slight delay for follower
-        setTimeout(() => {
-            cursorFollower.style.left = e.clientX + 'px';
-            cursorFollower.style.top = e.clientY + 'px';
-        }, 50);
-    });
-
-    links.forEach(link => {
-        link.addEventListener('mouseenter', () => {
-            cursor.classList.add('hover');
-            cursorFollower.style.borderColor = 'transparent';
-        });
-        link.addEventListener('mouseleave', () => {
-            cursor.classList.remove('hover');
-            cursorFollower.style.borderColor = 'rgba(255, 51, 0, 0.5)';
-        });
-    });
-
     // Smooth Scrolling for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
